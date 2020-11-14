@@ -15,4 +15,20 @@ function theDomHasLoaded(e) {
       item.classList.toggle("highlight");
     });
   });
+  /*Coded by Leela Raghavendra Muthineni */
+  var btns = document.getElementsByClassName("btn");
+  for (var i = 0; i < btns.length; i++) {
+    var btn = btns[i];
+    if (btn.type == "submit") {
+      btn.addEventListener("click", function(e) {
+    
+        document.querySelectorAll('.required').forEach(item => {
+            if (item.value.length == 0) {
+                item.classList.add("error");
+                e.preventDefault();
+            }
+        });
+      });
+    }
+  }
 }
